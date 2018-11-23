@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>login</title>
+
+</head>
+<body>
+  <center>
+<div class="card">
+  <div class="card-header">
+    login
+  </div>
+  <div class="card-text">
+    <form method="post" action="{{ url_for('loginattempt') }}">
+    <br><br>
+      <input type="text" name="loginid" autocomplete="off" placeholder=" Username" class="but"></input>
+      <br><br>
+      <input type="password" name="loginpass" autocomplete="off" placeholder=" Password" class="but"></input>
+      <br><br>
+      <input type="submit" class="btn btn-primary" value="login"></input>
+    </form>
+    <br>
+  </div>
+</div>
+  <br><br>
+</center>
+</body>
+</html>
