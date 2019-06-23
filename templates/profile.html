@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <center>
+    <h1>
+      Hello {{ user }}
+    </h1>
+  <h3>enter code here</h3>
+  <form method="post" action="{{ url_for('codeattempt') }}">
+  <br><br>
+    <input type="text" name="codeid" autocomplete="off" placeholder="code here" class="but"></input>
+    <br><br>
+    <input type="submit" class="btn btn-primary" value="enter"></input>
+  </form>
+  <p> you have {{ usermoney }} amount of tamatoo bucks, which is how many codes you have found</p>
+  </center>
+
+
+</body>
+</html>
