@@ -23,11 +23,7 @@ file4.close()
 
 @app.route('/')
 def index():
-    return "you have registered or code went through"
-
-@app.route('/about')
-def about():
-    return render_template("about.html")
+    return render_template("index.html")
 
 @app.route('/login')
 def login():
@@ -71,15 +67,19 @@ def registerattempt():
         money.update({register_id: "0"})
         session['username'] = register_id
         session['logged_in'] = True
-
+        print("making user in user file")
         file2 = open('users.json', 'w')
         json.dump(users, file2, indent=4)
         file2.close()
+        print("finished")
+        print("making user in user money")
 
         file4 = open('usersmoney.json', 'w')
         json.dump(money, file4, indent=4)
         file4.close()
-        return redirect('/login')
+        print("finished")
+
+        return redirect('/profile')
 
 @app.route('/register')
 def rigister():
@@ -93,7 +93,7 @@ def profileredirect():
 
 @app.route('/profile/<user>')
 def profile(user):
-    usermoney = money[user]
+    usermoney = money[session['username']]
     return render_template('profile.html', user = user, usermoney = usermoney)
 
 
@@ -108,18 +108,19 @@ def codeattempt():
     if attempted_code=='' or attempted_code==' ':
         return redirect('/profile')
     if attempted_code in codes:
-        if usercodes[session['username']] == attempted_code:
+        '''if usercodes[session['username']] == attempted_code:
             return redirect('/profile')
         usercodes.update({session['username']: attempted_code})
         file3 = open('usercodes.json', 'w')
         json.dump(usercodes, file3, indent=4)
-        file3.close()
-        newmoney = money[session['username']]
+        file3.close()'''
+        newmoney = int(money[session['username']]) + int(codes[attempted_code])
 
-        money.update({session['username']: {newmoney}})
-        file3 = open('usercodes.json', 'w')
-        json.dump(usercodes, file3, indent=4)
-        file3.close()
+        money.update({session['username']: newmoney})
+        file4 = open('usersmoney.json', 'w')
+        json.dump(money, file4, indent=4)
+        file4.close()
+
 
         return redirect('/profile')
     else:
