@@ -4,20 +4,22 @@
 <head>
   <style>
     body {
-    background-color:springgreen;
+    background-color:#ffb6c1;
   }
     h1 {
     font-family:arial;
-    color:blue;
+    color:#000000;
   }
 
     p {font-family:arial;
     max-width: 400px; width: 100%;
     margin: auto;
     margin-bottom: 40px;
+    color:#000000;
+    font-family:arial
 
   }
-    a {
+    buttton {
     font-family:arial;
   }
   </style>
@@ -26,15 +28,14 @@
 <body>
   <div style="text-align: center;">
     <h1>This is the tamatoo info page</h1>
-    <img src="tamatoes.jpg" height="150" style="margin-bottom: 20px;"/>
+    <img src="{{url_for('static', filename='index_tamatoo.png')}}" height="150" style="margin-bottom: 20px;"/>
     <p>
-    This is the tamtoo website you might be wondering what this is. well it is a website that you find codes that
-    the creator tamatoo will spread on discord. Use the codes to make tamatoo bucks, at the moment you cant do anything.
+    This is the tamatoo website you might be wondering what this is. Well it is a website that you find codes that
+    the creator tamatoo will spread on discord. Use the codes to make tamatoo bucks, at the moment you cant do anything
     The next thing in am going to work on is data storage to be more efficient. Then making something like a leaderboard.
   </p>
 
-    <a href="http://localhost:5000/register">click here to register</a>
-    <a href="http://localhost:5000/register">click this to login</a>
+    <button onclick="window.location.href = 'http://localhost:5000/register';">Register</button>       <button onclick="window.location.href = 'http://localhost:5000/login';">Login</button>
   </div>
 </body>
 

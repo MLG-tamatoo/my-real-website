@@ -1,20 +1,100 @@
 <!DOCTYPE html>
 <html>
+<style>
+body {
+background-color:#ffb6c1;
+}
+
+
+  h1 {
+  font-family:arial;
+  color:#000000;
+
+  font-weight: bold;
+}
+  h3 {
+    font-family:arial;
+    color:#000000;
+
+    font-weight: bold;
+  }
+  p {
+    font-family:arial;
+    color:#000000;
+    }
+  div.button1 {
+  position: fixed;
+  top: 3%;
+  right: 10%;
+  height: 30px;
+  width: 60px;
+
+  }
+
+  div.button2 {
+    position: fixed;
+    top: 6%;
+    right: 10%;
+    height: 30px;
+    width: 60px;
+  }
+  div.box {
+    background: #ffb6c1;
+    font-size: 300%;
+    color:#000000;
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    top: 3%;
+    right: 20%;
+  }
+.button3 {
+  position: fixed;
+  top: 9%;
+  right: 10%;
+  height: 25px;
+  width:88px;
+}
+  img {
+    background: #ffb6c1;
+    font-size: 300%;
+    color:#000000;
+    height: 80px;
+    width: 80px;
+    position: fixed;
+    top: 3%;
+    right: 30%;
+  }
+</style>
 <head>
+  <div class="button1">
+  <button onclick="window.location.href = 'http://localhost:5000/logout';">Logout</button>
+</div>
+<div class="button2">
+  <button onclick="window.location.href = 'http://localhost:5000/settings';">Settings</button>
+</div>
+<button class="button3" onclick="window.location.href = 'http://localhost:5000/leaderboard';">Leaderboard</button>
+  <div class="box" id="one">{{"$" + usermoney}}</div>
+  <img src="{{userimage}}" style="margin-bottom: 20px;"/>
 </head>
 <body>
   <center>
     <h1>
       Hello {{ user }}
     </h1>
-  <h3>enter code here</h3>
+  <h2>
+     Rank: {{userrank}}
+  </h2>
   <form method="post" action="{{ url_for('codeattempt') }}">
   <br><br>
-    <input type="text" name="codeid" autocomplete="off" placeholder="code here" class="but"></input>
+    <input type="text" name="codeid" autocomplete="off" placeholder="enter code here" class="but"></input>
     <br><br>
     <input type="submit" class="btn btn-primary" value="enter"></input>
   </form>
-  <p> you have {{ usermoney }} amount of tamatoo bucks, which is how many codes you have found</p>
+  <p class="main">The number in the top right is your amount of tamatoo score. Your rank is based on this: Bronze is 1-2, Silver 2-4 and Gold 5.
+  <br></br>
+  You can find codes on only on discord as of now, and must be on the servers of the creator tamatoo</p>
+  <button class="button4" onclick="window.location.href = 'https://discord.gg/RDgsWfu';">Join the Tamatoo Discord</button>
   </center>
 
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//Dth XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtmll/Dth/xhtmll-transitional.dth">
+<html>
+<style>
+body {
+background-color:#ffb6c1;
+}
+table, th {
+  border: 1px solid black;
+}
+.button1 {
+  position: fixed;
+  top: 3%;
+  right: 12%;
+  height: 33px;
+  width: 100px;
+}
+.button2 {
+  position: fixed;
+  top: 3%;
+  right: 25%;
+  height: 30px;
+  width: 63px;
+}
+.button3 {
+  position: fixed;
+  top: 3%;
+  right: 20%;
+  height: 30px;
+  width: 60px;
+}
+</style>
+<head>
+  <button class="button1" onclick="window.location.href = 'http://localhost:5000/profile';">Back To Profile</button>
+  <button class="button2" onclick="window.location.href = 'http://localhost:5000/register';">Register</button>
+  <button class="button3" onclick="window.location.href = 'http://localhost:5000/login';">Login</button>
+  <center>
+  <h1>Leaderboard</h1>
+  </center>
+</head>
+<body>
+  <center>
+    <br></br>
+    <br></br>
+    <table>
+      <tr>
+        <th>Place</th>
+        <th>Username</th>
+        <th>Money</th>
+        <th>Rank</th>
+        <th>Profile Picture</th>
+      </tr>
+      <tr>
+        <th>#1</th>
+        <th><center>{{result[0]}}</center></th>
+        <th><center>{{result[1]}}</center></th>
+        <th><center>{{result[2]}}</center></th>
+        <th><img height=100px width=100px src="{{result[3]}}"</th>
+      </tr>
+      <tr>
+        <th>#2</th>
+        <th><center>{{result[4]}}</center></th>
+        <th><center>{{result[5]}}</center></th>
+        <th><center>{{result[6]}}</center></th>
+        <th><img height=100px width=100px src="{{result[7]}}"</th>
+      </tr>
+      <tr>
+        <th>#3</th>
+        <th><center>{{result[8]}}</center></th>
+        <th><center>{{result[9]}}<center></th>
+        <th><center>{{result[10]}}<center></th>
+        <th><img height=100px width=100px src="{{result[11]}}"></th>
+      </tr>
+      <tr>
+        <th>#4</th>
+        <th><center>{{result[12]}}</center></th>
+        <th><center>{{result[13]}}</center></th>
+        <th><center>{{result[14]}}</center></th>
+        <th><img height=100px width=100px src="{{result[15]}}"></th>
+      </tr>
+      <tr>
+        <th>#5</th>
+        <th>{{result[16]}}</th>
+        <th>{{result[17]}}</th>
+        <th>{{result[18]}}</th>
+        <th><img height=100px width=100px src="{{result[19]}}"</th>
+      </tr>
+    </table>
+  </center>
+</body>
+</html>

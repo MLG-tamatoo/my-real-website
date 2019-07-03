@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtmll/DTD/xhtmll-transitional.dtd">
+<html>
+<style>
+body {
+background-color:#ffb6c1;
+}
+
+
+  h1 {
+  font-family:arial;
+  color:#000000;
+
+  font-weight: bold;
+}
+div.button1 {
+position: fixed;
+top: 3%;
+right: 10%;
+height: 30px;
+width: 60px;
+
+}
+
+.leftsideimg {
+  position: fixed;
+  top: 14%;
+  right: 70%;
+  height: 255px;
+  width: 255px;
+
+
+}
+.piclabel {
+  position: fixed;
+  top: 10%;
+  right: 82%;
+}
+</style>
+<head>
+<center>
+  <h1> Profile Settings</h1>
+</center>
+</head>
+<body>
+  <right>
+  <p class="piclabel">Current Profile Picture:</p>
+  </right>
+  <div>
+  <img src="{{userimage}}" style="margin-bottom: 20px;"/ class="leftsideimg">
+  </div>
+  <center>
+    <button onclick="window.location.href = 'http://localhost:5000/settings/{{username}}/changepass';">Change Password</button>
+    <button onclick="window.location.href = 'http://localhost:5000/settings/{{username}}/changeusername';">Change Username</button>
+    <button onclick="window.location.href = 'http://localhost:5000/settings/{{username}}/changeprofilepic';">Change Profile Picture</button>
+    <p class="usernamelabel">Current Username: {{username}}</p>
+    <button class="backbutton" onclick="window.location.href = 'http://localhost:5000/profile';">Back To Your Profile</button>
+
+</center>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+background-color:#ffb6c1;
+}
+
+
+  h1 {
+  font-family:arial;
+  color:#000000;
+
+  font-weight: bold;
+}
+
+}
+.newprofilepics {
+  background: #ffb6c1;
+  color:#000000;
+  height: 80px;
+  width: 80px;
+}
+.Currentlabel {
+  font-size: 150%;
+  color:#000000;
+  position: fixed;
+  top: 5%;
+  left: 20%;
+}
+.profilepic {
+  background: #ffb6c1;
+  font-size: 150%;
+  color:#000000;
+  height: 80px;
+  width: 80px;
+  position: fixed;
+  top: 10%;
+  left: 20%;
+}
+</style>
+<head>
+ <title>Login</title>
+ <center>
+ <h1>Change Your Profile Pic Here</h1>
+</center>
+</head>
+<body>
+  <div class=profile>
+    <div calss=Currentlabel>
+    <p class=Currentlabel>Current</p>
+    </div>
+    <img class=profilepic src="{{userpic}}" style="margin-bottom: 20px;"/>
+  </div>
+  <center>
+<div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-text">
+    <form method="post" action="{{ url_for('changeprofilepicattempt') }}">
+    <br><br>
+      <input type="radio" name="newprofilepic" value="option1">1</input><img class=newprofilepics src="{{url_for('static', filename='index_tamatoo.png')}}" height="150" style="margin-bottom: 20px;"/>
+      <br><br>
+      <input type="radio" name="newprofilepic" value="option2">2</input><img class=newprofilepics src="{{url_for('static', filename='default.png')}}" height="150" style="margin-bottom: 20px;"/>
+      <br><br>
+      <input type="radio" name="newprofilepic" value="option3">3</input><img class=newprofilepics src="{{url_for('static', filename='the_tamatoo-removebg-preview.png')}}" height="150" style="margin-bottom: 20px;"/>
+      <br><br>
+      <input type="submit" class="btn btn-primary" value="Change"></input>
+    </form>
+    <br>
+  </div>
+</div>
+  <br><br>
+</center>
+</body>
+</html>
