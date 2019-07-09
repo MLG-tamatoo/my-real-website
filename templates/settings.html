@@ -42,6 +42,7 @@ width: 60px;
   <h1> Profile Settings</h1>
 </center>
 </head>
+<title>Settings</title>
 <body>
   <right>
   <p class="piclabel">Current Profile Picture:</p>
@@ -53,6 +54,7 @@ width: 60px;
     <button onclick="window.location.href = 'http://localhost:5000/settings/{{username}}/changepass';">Change Password</button>
     <button onclick="window.location.href = 'http://localhost:5000/settings/{{username}}/changeusername';">Change Username</button>
     <button onclick="window.location.href = 'http://localhost:5000/settings/{{username}}/changeprofilepic';">Change Profile Picture</button>
+    <button onclick="window.location.href = 'http://localhost:5000/deleteemail';">Delete Account</button>
     <p class="usernamelabel">Current Username: {{username}}</p>
     <button class="backbutton" onclick="window.location.href = 'http://localhost:5000/profile';">Back To Your Profile</button>
 

@@ -61,6 +61,7 @@ width: 60px;
 </div>
 <button class="button2" onclick="window.location.href = 'http://localhost:5000/leaderboard';">Leaderboard</button>
 </head>
+<title>Register</title>
 <body>
   <center>
 <div class="card">
@@ -71,6 +72,8 @@ width: 60px;
     <form method="post" action="{{ url_for('registerattempt') }}">
     <br><br>
       <input type="text" name="registerid" autocomplete="off" placeholder=" Desired Username" class="but"></input>
+      <br><br>
+      <input type="text" name="registeremail" autocomplete="off" placeholder=" Your Email" class="but"></input>
       <br><br>
       <input type="password" name="registerpass" autocomplete="off" placeholder=" Desired Password" class="but"></input>
       <br><br>
@@ -115,13 +118,16 @@ function CustomAlert(){
 }
 var Alert = new CustomAlert();
 if (validation === "space") {
-  Alert.render('You cannot have a space in your username.')
+  Alert.render('You cannot have a space in your username or email.')
 }
 if (validation === "usedusername") {
   Alert.render('This username has already been used.')
 }
 if (validation === "unfilled") {
   Alert.render('Not all of the boxes were filled in.')
+}
+if (validation === "emailerror") {
+  Alert.render('If you are using an email it must have @gmail.com there may be other issues make sure it is in proper formating.')
 }
 </script>
 </html>
