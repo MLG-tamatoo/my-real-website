@@ -1,5 +1,5 @@
 What this is about:
-This is the tamatoo website, the first I ever made, you might be wondering what this is. Well it is a website that you find codes that
+This is the tamatoo website, the first website I ever made, you might be wondering what this is. Well it is a website that you find codes that
 the creator tamatoo will spread on discord. Use the codes to make tamatoo bucks, at the moment you cant do anything with them.
 
 How I made it:
